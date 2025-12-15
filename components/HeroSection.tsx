@@ -1,83 +1,86 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import Badge from './Badge';
 import { motion } from 'motion/react';
 
-const HeroSection = () => {
-  return (
-    <main className="mt-16 max-w-full">
-      <div className="flex w-fit flex-col">
-        <motion.div
-          initial={{ opacity: 0, filter: 'blue(10px)', y: 10 }}
-          animate={{ opacity: 1, filter: 'blue(0px)', y: 0 }}
-          transition={{ duration: 0.3 }}
-          className="flex items-center gap-4"
-        >
-          <Image
-            height={128}
-            width={128}
-            src="/stewie-music.jpeg"
-            alt="my avatar"
-            className="w-20 cursor-pointer rounded-full ring-2 active:ring-white md:w-22"
-          />
-          <div className="flex w-full flex-col">
-            <div className="flex w-full items-center justify-between">
-              <p className="text-2xl font-semibold text-neutral-800 md:text-3xl dark:text-white">
-                Hi, I&apos;m Shazab Saifi
-              </p>
-              <Badge
-                variant="info"
-                textShimmer={true}
-                baseColor="var(--color-blue-600)"
-                shimmerColor="var(--color-white)"
-                className="hidden sm:inline dark:bg-blue-900/50"
-              >
-                Available For Work
-              </Badge>
-            </div>
-            <p className="text-neutral-800 dark:text-white">
-              20y/o developer & designer
+const HeroSection = () => (
+  <main className="mt-16 max-w-full md:mt-28">
+    <div className="flex w-fit flex-col">
+      <motion.div
+        initial={{ opacity: 0, filter: 'blue(10px)', y: 10 }}
+        animate={{ opacity: 1, filter: 'blue(0px)', y: 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        <div className="flex w-full flex-col">
+          <div className="flex w-full items-center justify-between">
+            <p className="text-lg font-semibold text-neutral-800 md:text-xl dark:text-white">
+              Shazab Saifi
             </p>
-            <Badge
+            {/* <Badge
               variant="info"
-              textShimmer={true}
+              textShimmer
               baseColor="var(--color-blue-600)"
               shimmerColor="var(--color-white)"
-              className="mt-2 w-fit sm:hidden dark:bg-blue-900/50"
+              className="hidden sm:inline dark:bg-blue-900/50"
             >
               Available For Work
-            </Badge>
+            </Badge> */}
           </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, filter: 'blue(10px)', y: 10 }}
-          animate={{ opacity: 1, filter: 'blue(0px)', y: 0 }}
-          transition={{ duration: 0.3, delay: 0.1 }}
-          className="mt-10 max-w-2xl"
-        >
-          <div className="space-y-2 text-wrap text-neutral-800 dark:text-white">
-            <p className="text-wrap">
-              Hi, I&apos;m Shazab Saifi, a passionate Design engineer. I can
-              design user interfaces and turn them into real life products. I
-              love bridging the gap between beautiful design and robust code,
-              and I enjoy solving problems that make digital experiences more
-              delightful and accessible.
-            </p>
-            <p>
-              I find desining and engineering to be a form of art. And I like
-              art.
-            </p>
-            <p className="inline-flex items-center gap-1">
-              Mostly you&apos;ll find me on
-              <Link href="https://x.com/shazabsaifi_s9">𝕏</Link>
-            </p>
-          </div>
-        </motion.div>
-      </div>
-    </main>
-  );
-};
+          <p className="text-neutral-800 dark:text-neutral-300">
+            Design engineer
+          </p>
+          <Badge
+            variant="info"
+            textShimmer
+            baseColor="var(--color-blue-600)"
+            shimmerColor="var(--color-white)"
+            className="mt-2 w-fit sm:hidden dark:bg-blue-900/50"
+          >
+            Available For Work
+          </Badge>
+        </div>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, filter: 'blue(10px)', y: 10 }}
+        animate={{ opacity: 1, filter: 'blue(0px)', y: 0 }}
+        transition={{ duration: 0.3, delay: 0.1 }}
+        className="mt-10 max-w-2xl"
+      >
+        <div className="space-y-2 text-neutral-800 dark:text-neutral-300">
+          <p>
+            Hi, I&apos;m Shazab Saifi, a passionate Design engineer. I can
+            design user interfaces and turn them into real life products. I love
+            bridging the gap between beautiful design and robust code, and I
+            enjoy solving problems that make digital experiences more delightful
+            and accessible.
+          </p>
+          <p>
+            I find designing and engineering to be a form of art. And I like
+            art.
+          </p>
+          <p className="flex items-center gap-1">
+            Wrapped up web3 products as a full-stack intern at
+            <Link
+              href="https://www.linkedin.com/company/quarlatis/?originalSubdomain=in"
+              className="underline decoration-sky-500 decoration-wavy transition-colors hover:text-white"
+            >
+              Quarlatis
+            </Link>
+          </p>
+          <p className="inline-flex items-center gap-1">
+            Mostly you&apos;ll find me on
+            <Link
+              href="https://x.com/shazabsaifi_s9"
+              className="underline decoration-sky-500 decoration-wavy transition-colors hover:text-white"
+            >
+              Twitter
+            </Link>
+          </p>
+        </div>
+      </motion.div>
+    </div>
+  </main>
+);
 
 export default HeroSection;

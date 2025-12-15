@@ -51,7 +51,7 @@ const DesignsSection = () => {
   ];
 
   return (
-    <div className="mt-12 flex flex-col gap-6 md:mt-16 md:gap-8">
+    <div className="flex flex-col gap-6 md:gap-8">
       <motion.h1
         initial={{ y: 10, opacity: 0, filter: 'blur(10px)' }}
         whileInView={{ y: 0, opacity: 1, filter: 'blur(0px)' }}

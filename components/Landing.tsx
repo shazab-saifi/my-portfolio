@@ -2,19 +2,23 @@ import HeroSection from './HeroSection';
 import ProjectSection from './ProjectSection';
 import DesignsSection from './DesignsSection';
 import SkillsSection from './SkillsSection';
-import Dock from './Dock';
+import ThemeToggle from './ThemeToggle';
 import BackgroundGrid from './BackgroundGrid';
+import Experience from './Experience';
+import Socials from './Socials';
 
 const Landing = () => {
   return (
-    <div className="relative flex min-h-screen w-full flex-col flex-wrap items-center bg-blue-50 px-4 sm:px-20 dark:bg-neutral-950">
-      <BackgroundGrid />
-      <div className="relative flex max-w-2xl flex-col">
+    <div className="relative flex min-h-screen w-full justify-center bg-neutral-50 px-4 sm:px-20 dark:bg-neutral-950">
+      {/* <BackgroundGrid /> */}
+      <div className="flex max-w-2xl flex-col gap-12 md:gap-24">
         <HeroSection />
-        <ProjectSection />
-        <DesignsSection />
         <SkillsSection />
-        <Dock />
+        <Experience />
+        <ProjectSection />
+        {/* <DesignsSection /> */}
+        <Socials />
+        <ThemeToggle />
       </div>
     </div>
   );

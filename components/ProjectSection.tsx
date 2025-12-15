@@ -26,7 +26,7 @@ const ProjectSection = () => {
       name: 'Pixory',
       image: '/pixoryIcon.png',
       description:
-        'Pixory is a modern platform to explore, download, and share high-quality photos and videos. Features include search, user authentication, and personalized collections.',
+        'Pixory is a modern platform to explore, download, and share high-quality photos and videos. Features include search, authentication, and personalized collections.',
       url: 'https://pixory.shazab.site',
       githubLink: 'https://github.com/shazab-saifi/Pixory',
       techStack: [
@@ -56,17 +56,17 @@ const ProjectSection = () => {
   ];
 
   return (
-    <div className="mt-12 flex flex-col gap-6 md:mt-16 md:gap-8">
+    <div className="flex flex-col gap-6">
       <motion.h1
         initial={{ y: 10, opacity: 0, filter: 'blur(10px)' }}
         whileInView={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
         transition={{ duration: 0.3, delay: 0.2 }}
         viewport={{ once: true }}
-        className="text-xl font-semibold text-neutral-800 md:text-2xl dark:text-white"
+        className="text-lg font-semibold text-neutral-800 md:text-xl dark:text-white"
       >
-        Projects —
+        Projects
       </motion.h1>
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-12">
         {projects.map((project, idx) => (
           <motion.div
             initial={{ y: 10, opacity: 0, filter: 'blur(10px)' }}
@@ -85,22 +85,19 @@ const ProjectSection = () => {
                 className="size-12 flex-shrink-0"
               />
               <div className="flex flex-1 flex-col">
-                <div className="flex w-full flex-row justify-between sm:gap-0">
+                <div className="flex items-center justify-between">
                   <div
-                    className={`group flex items-center gap-2 ${
+                    className={`group flex items-center gap-4 ${
                       project.inDevelopment
                         ? ''
                         : 'cursor-pointer hover:underline'
                     }`}
                   >
-                    <h3 className="text-lg font-semibold text-neutral-800 dark:text-white">
+                    <h3 className="font-semibold text-neutral-800 dark:text-white">
                       {project.name}
                     </h3>
                     {project.inDevelopment && (
-                      <Badge
-                        variant="warning"
-                        className="dark:bg-yellow-900/50 dark:text-yellow-400"
-                      >
+                      <Badge variant="default" textShimmer>
                         In Development
                       </Badge>
                     )}
@@ -112,7 +109,7 @@ const ProjectSection = () => {
                         rel="noopener noreferrer"
                       >
                         <IconExternalLink
-                          size={18}
+                          size={16}
                           className="transition-opacity group-hover:opacity-100 md:opacity-0"
                         />
                       </a>
@@ -132,24 +129,8 @@ const ProjectSection = () => {
                 <p className="mt-1 max-w-full text-sm text-wrap text-neutral-600 sm:text-base dark:text-neutral-400">
                   {project.description}
                 </p>
-                <div className="mt-4 flex flex-col flex-wrap gap-1 sm:flex-row sm:gap-2">
-                  <h3 className="text-sm font-semibold text-neutral-800 sm:text-base dark:text-white">
-                    Tech Stack:
-                  </h3>
-                  <div className="flex max-w-full flex-wrap space-x-2 text-sm text-neutral-600 sm:text-base dark:text-neutral-400">
-                    {project.techStack.map((item, idx) => (
-                      <span key={idx}>
-                        {item}
-                        {idx !== project.techStack.length - 1 ? ',' : ''}
-                      </span>
-                    ))}
-                  </div>
-                </div>
               </div>
             </div>
-            {!(projects.length - 1 === idx) && (
-              <div className="h-[1px] w-full bg-neutral-300 dark:bg-neutral-800"></div>
-            )}
           </motion.div>
         ))}
       </div>

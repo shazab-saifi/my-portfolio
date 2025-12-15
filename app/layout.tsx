@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import { Geist } from 'next/font/google';
+import { Manrope } from 'next/font/google';
 import './globals.css';
 
-const geist = Geist({
+const manrope = Manrope({
   weight: '400',
   subsets: ['latin'],
   display: 'swap',
@@ -23,7 +23,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/portfolioLogo.svg" type="image/svg" />
       </head>
-      <body className={`${geist.className} antialiased`}>{children}</body>
+      <body className={`${manrope.className} antialiased`}>{children}</body>
     </html>
   );
 }
