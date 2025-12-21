@@ -1,47 +1,58 @@
 'use client';
 
-import { IconSun } from '@tabler/icons-react';
-import { useState, useEffect } from 'react';
+import { IconMoon, IconSun } from '@tabler/icons-react';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 const ThemeToggle = () => {
-  const [isDark, setIsDark] = useState(false);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem('dark');
-    const prefersDark = window.matchMedia(
-      '(prefers-color-scheme: dark)'
-    ).matches;
-    const shouldBeDark = stored ? JSON.parse(stored) : prefersDark;
-
-    document.documentElement.classList.toggle('dark', shouldBeDark);
-    setIsDark(shouldBeDark);
+    setMounted(true);
   }, []);
 
   const handleToggle = () => {
-    const next = !isDark;
+    if (!mounted) return;
+
+    const nextTheme = theme === 'dark' ? 'light' : 'dark';
 
     if (!document.startViewTransition) {
-      document.documentElement.classList.toggle('dark', next);
-      localStorage.setItem('dark', JSON.stringify(next));
-      setIsDark(next);
+      setTheme(nextTheme);
       return;
     }
 
     document.startViewTransition(() => {
-      document.documentElement.classList.toggle('dark', next);
-      localStorage.setItem('dark', JSON.stringify(next));
-      setIsDark(next);
+      setTheme(nextTheme);
     });
   };
+
+  if (!mounted) {
+    return (
+      <button
+        type="button"
+        aria-label="Toggle theme"
+        className="fixed top-4 right-4 mx-auto flex cursor-pointer items-center justify-center rounded-full border border-neutral-200 bg-white/50 p-2 shadow-md backdrop-blur-md focus:outline-none dark:border-neutral-800 dark:bg-neutral-950/50"
+      >
+        <IconMoon className="h-5 w-5 text-neutral-950 dark:text-neutral-100" />
+      </button>
+    );
+  }
+
+  const isDark = theme === 'dark';
 
   return (
     <button
       type="button"
       aria-label="Toggle theme"
       onClick={handleToggle}
-      className="fixed top-4 right-4 mx-auto flex items-center justify-center rounded-full border border-neutral-200 bg-white/50 p-2 shadow-md backdrop-blur-md focus:outline-none dark:border-neutral-800 dark:bg-neutral-950/50"
+      className="fixed top-4 right-4 mx-auto flex cursor-pointer items-center justify-center rounded-full border border-neutral-200 bg-white/50 p-2 shadow-md backdrop-blur-md focus:outline-none dark:border-neutral-800 dark:bg-neutral-950/50"
     >
-      <IconSun className="h-6 w-6 text-neutral-950 dark:text-neutral-100" />
+      {isDark ? (
+        <IconSun className="h-6 w-6 text-neutral-950 dark:text-neutral-100" />
+      ) : (
+        <IconMoon className="h-5 w-5 text-neutral-950 dark:text-neutral-100" />
+      )}
     </button>
   );
 };

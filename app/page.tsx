@@ -7,7 +7,8 @@ export const metadata: Metadata = {
   description:
     "I'm a design engineer who crafts user interfaces and writes code. I blend design and development to create seamless, engaging digital experiences.",
   openGraph: {
-    images: '/ogimage.png',
+    images:
+      'https://res.cloudinary.com/dlpjh3fcx/image/upload/v1766322584/Screenshot_from_2025-12-21_18-38-21_lvs90a.png',
   },
   twitter: {
     card: 'summary_large_image',

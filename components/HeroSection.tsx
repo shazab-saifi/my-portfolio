@@ -17,15 +17,6 @@ const HeroSection = () => (
             <p className="text-lg font-semibold text-neutral-800 md:text-xl dark:text-white">
               Shazab Saifi
             </p>
-            {/* <Badge
-              variant="info"
-              textShimmer
-              baseColor="var(--color-blue-600)"
-              shimmerColor="var(--color-white)"
-              className="hidden sm:inline dark:bg-blue-900/50"
-            >
-              Available For Work
-            </Badge> */}
           </div>
           <p className="text-neutral-800 dark:text-neutral-300">
             Design engineer
@@ -63,7 +54,7 @@ const HeroSection = () => (
             Wrapped up web3 products as a full-stack intern at
             <Link
               href="https://www.linkedin.com/company/quarlatis/?originalSubdomain=in"
-              className="underline decoration-sky-500 decoration-wavy transition-colors hover:text-white"
+              className="underline decoration-sky-500 decoration-wavy transition-colors hover:text-neutral-500 dark:hover:text-white"
             >
               Quarlatis
             </Link>
@@ -72,7 +63,7 @@ const HeroSection = () => (
             Mostly you&apos;ll find me on
             <Link
               href="https://x.com/shazabsaifi_s9"
-              className="underline decoration-sky-500 decoration-wavy transition-colors hover:text-white"
+              className="underline decoration-sky-500 decoration-wavy transition-colors hover:text-neutral-500 dark:hover:text-white"
             >
               Twitter
             </Link>

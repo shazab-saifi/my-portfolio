@@ -1,6 +1,5 @@
 import HeroSection from './HeroSection';
 import ProjectSection from './ProjectSection';
-import DesignsSection from './DesignsSection';
 import SkillsSection from './SkillsSection';
 import ThemeToggle from './ThemeToggle';
 import BackgroundGrid from './BackgroundGrid';
@@ -9,8 +8,8 @@ import Socials from './Socials';
 
 const Landing = () => {
   return (
-    <div className="relative flex min-h-screen w-full justify-center bg-neutral-50 px-4 sm:px-20 dark:bg-neutral-950">
-      {/* <BackgroundGrid /> */}
+    <div className="scroll-content relative flex min-h-screen w-full justify-center bg-neutral-50 px-4 sm:px-20 dark:bg-neutral-950">
+      <BackgroundGrid />
       <div className="flex max-w-2xl flex-col gap-12 md:gap-24">
         <HeroSection />
         <SkillsSection />

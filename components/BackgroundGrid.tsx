@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 
 const BackgroundGrid = () => {
   return (
-    <div>
+    <div className="pointer-events-none">
       <motion.div
         initial={{ opacity: 0, filter: 'blue(10px)' }}
         whileInView={{ opacity: 1, filter: 'blue(0px)' }}

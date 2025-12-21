@@ -21,7 +21,7 @@ const Experience = () => {
       <motion.h1
         initial={{ y: 10, opacity: 0, filter: 'blur(10px)' }}
         whileInView={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
-        transition={{ duration: 0.3, delay: 0.2 }}
+        transition={{ duration: 0.3, delay: 0.4 }}
         viewport={{ once: true }}
         className="text-lg font-semibold text-neutral-800 md:text-xl dark:text-white"
       >
@@ -32,7 +32,7 @@ const Experience = () => {
           <motion.div
             initial={{ y: 10, opacity: 0, filter: 'blur(10px)' }}
             whileInView={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
-            transition={{ duration: 0.3, delay: 0.3 }}
+            transition={{ duration: 0.3, delay: 0.5 }}
             viewport={{ once: true }}
             key={idx}
             className="space-y-4"

@@ -4,8 +4,10 @@ import { IconExternalLink, IconBrandGithub } from '@tabler/icons-react';
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import Badge from './Badge';
+import { useTheme } from 'next-themes';
 
 const ProjectSection = () => {
+  const { theme } = useTheme();
   const projects = [
     {
       name: 'Quartz UI',
@@ -87,17 +89,21 @@ const ProjectSection = () => {
               <div className="flex flex-1 flex-col">
                 <div className="flex items-center justify-between">
                   <div
-                    className={`group flex items-center gap-4 ${
-                      project.inDevelopment
-                        ? ''
-                        : 'cursor-pointer hover:underline'
+                    className={`group flex items-center gap-2 ${
+                      project.inDevelopment ? '' : 'cursor-pointer'
                     }`}
                   >
                     <h3 className="font-semibold text-neutral-800 dark:text-white">
                       {project.name}
                     </h3>
                     {project.inDevelopment && (
-                      <Badge variant="default" textShimmer>
+                      <Badge
+                        variant="default"
+                        textShimmer
+                        className="ml-2"
+                        baseColor={theme === 'dark' ? '#fff' : '#000'}
+                        shimmerColor={theme === 'dark' ? '#000' : '#fff'}
+                      >
                         In Development
                       </Badge>
                     )}
