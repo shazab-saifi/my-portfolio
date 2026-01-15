@@ -10,7 +10,7 @@ const Experience = () => {
     {
       name: 'Quarlatis',
       image:
-        'https://media.licdn.com/dms/image/v2/D560BAQFRdrIZue68hA/company-logo_200_200/B56Zcq041lHoAM-/0/1748770197624?e=1767225600&v=beta&t=mY8j_XpexaUa8DfAYpJVref9pMruRbV6EvZx39uMqWA',
+        'https://res.cloudinary.com/dlpjh3fcx/image/upload/v1768289276/quarlatis_ag10jp.jpg',
       link: 'https://www.linkedin.com/company/quarlatis/?originalSubdomain=in',
       role: 'Full-stack intern, Sep 2024 to Nov 2025',
     },

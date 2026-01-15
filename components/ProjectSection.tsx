@@ -6,56 +6,64 @@ import Image from 'next/image';
 import Badge from './Badge';
 import { useTheme } from 'next-themes';
 
+interface Projects {
+  name: string;
+  image: string;
+  description: string;
+  url: string;
+  techStack: string[];
+  githubLink?: string;
+  inDevelopment?: boolean;
+}
+
+const projects: Projects[] = [
+  {
+    name: 'Quartz UI',
+    image:
+      'https://res.cloudinary.com/dlpjh3fcx/image/upload/v1759296296/quartzui-light_ytrk9a.svg',
+    description:
+      'Quartz UI is a modern animated UI library for Next.js, with easy integration and a CLI for adding components.',
+    url: 'https://quartzui.shazab.site',
+    techStack: [
+      'React.js',
+      'Next.js',
+      'Tailwind.css',
+      'Motion.dev',
+      'Storybook.js',
+    ],
+  },
+  {
+    name: 'Pixory',
+    image:
+      'https://res.cloudinary.com/dlpjh3fcx/image/upload/v1768289602/pixoryIcon_pjkima.png',
+    description:
+      'Pixory is a modern platform to explore, download, and share high-quality photos and videos. Features include search, authentication, and personalized collections.',
+    url: 'https://pixory.shazab.site',
+    githubLink: 'https://github.com/shazab-saifi/Pixory',
+    techStack: [
+      'React.js',
+      'Next.js',
+      'Zustand',
+      'Tailwind.css',
+      'React query',
+      'Prisma',
+      'neon.tech',
+    ],
+  },
+  {
+    name: 'Periskope Assignment',
+    image:
+      'https://res.cloudinary.com/dlpjh3fcx/image/upload/v1768289584/periskopeLogo_okapfh.png',
+    description:
+      'A real-time group chat app built for a Periskope internship assignment. Users can create rooms and chat instantly.',
+    url: 'https://periskope.shazab.site',
+    githubLink: 'https://github.com/shazab-saifi/periskopeassignment',
+    techStack: ['React.js', 'Next.js', 'Tailwind.css', 'Supabase realtime db'],
+  },
+];
+
 const ProjectSection = () => {
   const { theme } = useTheme();
-  const projects = [
-    {
-      name: 'Quartz UI',
-      image:
-        'https://res.cloudinary.com/dlpjh3fcx/image/upload/v1759296296/quartzui-light_ytrk9a.svg',
-      description:
-        'Quartz UI is a modern animated UI library for Next.js, with easy integration and a CLI for adding components.',
-      inDevelopment: true,
-      techStack: [
-        'React.js',
-        'Next.js',
-        'Tailwind.css',
-        'Motion.dev',
-        'Storybook.js',
-      ],
-    },
-    {
-      name: 'Pixory',
-      image: '/pixoryIcon.png',
-      description:
-        'Pixory is a modern platform to explore, download, and share high-quality photos and videos. Features include search, authentication, and personalized collections.',
-      url: 'https://pixory.shazab.site',
-      githubLink: 'https://github.com/shazab-saifi/Pixory',
-      techStack: [
-        'React.js',
-        'Next.js',
-        'Zustand',
-        'Tailwind.css',
-        'React query',
-        'Prisma',
-        'neon.tech',
-      ],
-    },
-    {
-      name: 'Periskope Assignment',
-      image: '/periskopeLogo.png',
-      description:
-        'A real-time group chat app built for a Periskope internship assignment. Users can create rooms and chat instantly.',
-      url: 'https://periskope.shazab.site',
-      githubLink: 'https://github.com/shazab-saifi/periskopeassignment',
-      techStack: [
-        'React.js',
-        'Next.js',
-        'Tailwind.css',
-        'Supabase realtime db',
-      ],
-    },
-  ];
 
   return (
     <div className="flex flex-col gap-6">

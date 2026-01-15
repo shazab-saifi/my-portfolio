@@ -38,7 +38,7 @@ const HeroSection = () => (
         transition={{ duration: 0.3, delay: 0.1 }}
         className="mt-10 max-w-2xl"
       >
-        <div className="space-y-2 text-neutral-800 dark:text-neutral-300">
+        <div className="space-y-2 font-medium text-neutral-800 dark:text-neutral-300">
           <p>
             Hi, I&apos;m Shazab Saifi, a passionate Design engineer. I can
             design user interfaces and turn them into real life products. I love
@@ -54,7 +54,7 @@ const HeroSection = () => (
             Wrapped up web3 products as a full-stack intern at
             <Link
               href="https://www.linkedin.com/company/quarlatis/?originalSubdomain=in"
-              className="underline decoration-sky-500 decoration-wavy transition-colors hover:text-neutral-500 dark:hover:text-white"
+              className="underline decoration-sky-500 decoration-wavy transition-colors hover:text-black dark:hover:text-white"
             >
               Quarlatis
             </Link>
@@ -63,7 +63,7 @@ const HeroSection = () => (
             Mostly you&apos;ll find me on
             <Link
               href="https://x.com/shazabsaifi_s9"
-              className="underline decoration-sky-500 decoration-wavy transition-colors hover:text-neutral-500 dark:hover:text-white"
+              className="underline decoration-sky-500 decoration-wavy transition-colors hover:text-black dark:hover:text-white"
             >
               Twitter
             </Link>
