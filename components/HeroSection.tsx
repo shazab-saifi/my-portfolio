@@ -21,15 +21,6 @@ const HeroSection = () => (
           <p className="text-neutral-800 dark:text-neutral-300">
             Design engineer
           </p>
-          <Badge
-            variant="info"
-            textShimmer
-            baseColor="var(--color-blue-600)"
-            shimmerColor="var(--color-white)"
-            className="mt-2 w-fit sm:hidden dark:bg-blue-900/50"
-          >
-            Available For Work
-          </Badge>
         </div>
       </motion.div>
       <motion.div

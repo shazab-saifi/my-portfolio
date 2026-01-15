@@ -5,17 +5,18 @@ import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Experience = () => {
-  const companies = [
-    {
-      name: 'Quarlatis',
-      image:
-        'https://res.cloudinary.com/dlpjh3fcx/image/upload/v1768289276/quarlatis_ag10jp.jpg',
-      link: 'https://www.linkedin.com/company/quarlatis/?originalSubdomain=in',
-      role: 'Full-stack intern, Sep 2024 to Nov 2025',
-    },
-  ];
+const companies = [
+  {
+    name: 'Quarlatis',
+    image:
+      'https://res.cloudinary.com/dlpjh3fcx/image/upload/v1768289276/quarlatis_ag10jp.jpg',
+    link: 'https://www.linkedin.com/company/quarlatis/?originalSubdomain=in',
+    role: 'Full-stack intern',
+    duration: 'Oct 2025 — Nov 2025',
+  },
+];
 
+const Experience = () => {
   return (
     <div className="flex flex-col gap-6">
       <motion.h1
@@ -37,7 +38,7 @@ const Experience = () => {
             key={idx}
             className="space-y-4"
           >
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
+            <div className="flex flex-row items-start gap-4">
               <Image
                 src={company.image}
                 alt={company.name}
@@ -64,9 +65,10 @@ const Experience = () => {
                     </Link>
                   </div>
                 </div>
-                <p className="mt-1 max-w-full text-sm text-wrap text-neutral-600 sm:text-base dark:text-neutral-400">
-                  {company.role}
-                </p>
+                <div className="mt-1 flex max-w-full items-center gap-2 text-sm text-neutral-600 sm:text-base dark:text-neutral-400">
+                  <p className="text-wrap">{company.role},</p>
+                  <p>{company.duration}</p>
+                </div>
               </div>
             </div>
           </motion.div>

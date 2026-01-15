@@ -24,6 +24,7 @@ const projects: Projects[] = [
     description:
       'Quartz UI is a modern animated UI library for Next.js, with easy integration and a CLI for adding components.',
     url: 'https://quartzui.shazab.site',
+    githubLink: 'https://github.com/shazab-saifi/quartzui',
     techStack: [
       'React.js',
       'Next.js',
@@ -96,39 +97,33 @@ const ProjectSection = () => {
               />
               <div className="flex flex-1 flex-col">
                 <div className="flex items-center justify-between">
-                  <div
-                    className={`group flex items-center gap-2 ${
-                      project.inDevelopment ? '' : 'cursor-pointer'
-                    }`}
-                  >
-                    <h3 className="font-semibold text-neutral-800 dark:text-white">
-                      {project.name}
-                    </h3>
-                    {project.inDevelopment && (
-                      <Badge
-                        variant="default"
-                        textShimmer
-                        className="ml-2"
-                        baseColor={theme === 'dark' ? '#fff' : '#000'}
-                        shimmerColor={theme === 'dark' ? '#000' : '#fff'}
-                      >
-                        In Development
-                      </Badge>
-                    )}
-                    {project.url && (
-                      <a
-                        href={project.url}
-                        className="flex items-center"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <IconExternalLink
-                          size={16}
-                          className="transition-opacity group-hover:opacity-100 md:opacity-0"
-                        />
-                      </a>
-                    )}
-                  </div>
+                  {project.url && (
+                    <a
+                      href={project.url}
+                      className="group flex items-center"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <h3 className="font-semibold text-neutral-800 dark:text-white">
+                        {project.name}
+                      </h3>
+                      {project.inDevelopment && (
+                        <Badge
+                          variant="default"
+                          textShimmer
+                          className="ml-2"
+                          baseColor={theme === 'dark' ? '#fff' : '#000'}
+                          shimmerColor={theme === 'dark' ? '#000' : '#fff'}
+                        >
+                          In Development
+                        </Badge>
+                      )}
+                      <IconExternalLink
+                        size={16}
+                        className="ml-1 transition-opacity group-hover:opacity-100 md:opacity-0"
+                      />
+                    </a>
+                  )}
                   {project.githubLink && (
                     <a
                       href={project.githubLink}
