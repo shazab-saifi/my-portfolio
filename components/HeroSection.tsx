@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
+import TypeWriter from 'typewriter-effect';
 
 const HeroSection = () => (
   <main className="mt-16 max-w-full md:mt-28">
@@ -17,9 +18,15 @@ const HeroSection = () => (
               Shazab Saifi
             </p>
           </div>
-          <p className="text-neutral-800 dark:text-neutral-300">
-            Design engineer
-          </p>
+          <div className="text-neutral-800 dark:text-neutral-300">
+            <TypeWriter
+              options={{
+                strings: ['Design engineer', 'Full stack developer'],
+                autoStart: true,
+                loop: true,
+              }}
+            />
+          </div>
         </div>
       </motion.div>
       <motion.div
@@ -40,22 +47,14 @@ const HeroSection = () => (
             I find designing and engineering to be a form of art. And I like
             art.
           </p>
-          <p className="flex items-center gap-1">
-            Wrapped up web3 products as a full-stack intern at
-            <Link
-              href="https://www.linkedin.com/company/quarlatis/?originalSubdomain=in"
-              className="underline decoration-sky-500 decoration-wavy transition-colors hover:text-black dark:hover:text-white"
-            >
-              Quarlatis
-            </Link>
-          </p>
+
           <p className="inline-flex items-center gap-1">
             Mostly you&apos;ll find me on
             <Link
               href="https://x.com/shazabsaifi_s9"
               className="underline decoration-sky-500 decoration-wavy transition-colors hover:text-black dark:hover:text-white"
             >
-              Twitter
+              𝕏 (Formerly Twitter)
             </Link>
           </p>
         </div>
