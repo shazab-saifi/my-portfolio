@@ -44,7 +44,7 @@ const Experience = () => {
                 alt={company.name}
                 width={48}
                 height={48}
-                className="size-12 flex-shrink-0"
+                className="size-12 shrink-0"
               />
               <div className="flex flex-1 flex-col">
                 <div className="flex items-center justify-between">

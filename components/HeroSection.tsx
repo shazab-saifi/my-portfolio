@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Badge from './Badge';
 import { motion } from 'motion/react';
 
 const HeroSection = () => (

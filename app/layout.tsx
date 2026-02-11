@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Manrope } from 'next/font/google';
-import { ThemeProvider } from 'next-themes';
+import '@/lib/localStorageShim';
+import { Providers } from '@/components/Providers';
 import './globals.css';
 
 const manrope = Manrope({
@@ -25,9 +26,7 @@ export default function RootLayout({
         <link rel="icon" href="/portfolioLogo.svg" type="image/svg" />
       </head>
       <body className={`${manrope.className} antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
-        </ThemeProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
