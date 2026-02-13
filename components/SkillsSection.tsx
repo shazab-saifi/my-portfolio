@@ -1,19 +1,55 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'motion/react';
 
 const SkillsSection = () => {
   const skills = [
-    'JavaScript',
-    'TypeScript',
-    'React.js',
-    'Next.js',
-    'Tailwindcss',
-    'Figma',
-    'Node.js',
-    'Express.js',
-    'Mongodb',
-    'Postgresql',
+    {
+      title: 'JavaScript',
+      logo: 'https://www.svgrepo.com/show/303206/javascript-logo.svg',
+    },
+    {
+      title: 'TypeScript',
+      logo: 'https://www.svgrepo.com/show/374146/typescript-official.svg',
+    },
+    {
+      title: 'React.js',
+      logo: 'https://www.svgrepo.com/show/374032/reactjs.svg',
+    },
+    {
+      title: 'Next.js',
+      logo: 'https://cdn.brandfetch.io/id2alue-rx/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B',
+    },
+    {
+      title: 'React Native',
+      logo: 'https://cdn.brandfetch.io/idTpJSSBPD/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B',
+    },
+    {
+      title: 'Tailwindcss',
+      logo: 'https://www.svgrepo.com/show/354431/tailwindcss-icon.svg',
+    },
+    { title: 'Figma', logo: 'https://www.svgrepo.com/show/452202/figma.svg' },
+    {
+      title: 'Motion',
+      logo: 'https://cdn.brandfetch.io/idDJv1mfrb/theme/light/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B',
+    },
+    {
+      title: 'Node.js',
+      logo: 'https://cdn.brandfetch.io/id7JRtQEAa/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B',
+    },
+    {
+      title: 'Express.js',
+      logo: 'https://www.svgrepo.com/show/452075/node-js.svg',
+    },
+    {
+      title: 'Mongodb',
+      logo: 'https://www.svgrepo.com/show/331488/mongodb.svg',
+    },
+    {
+      title: 'Postgresql',
+      logo: 'https://www.svgrepo.com/show/354200/postgresql.svg',
+    },
   ];
 
   return (
@@ -27,7 +63,7 @@ const SkillsSection = () => {
       >
         Skills
       </motion.h1>
-      <div className="flex max-w-full flex-wrap gap-2">
+      <div className="grid max-w-full grid-cols-2 gap-4 sm:grid-cols-3">
         {skills.map((skill, idx) => (
           <motion.span
             initial={{ y: 10, opacity: 0, filter: 'blur(10px)' }}
@@ -35,9 +71,16 @@ const SkillsSection = () => {
             transition={{ duration: 0.3, delay: 0.3 }}
             viewport={{ once: true }}
             key={idx}
-            className="rounded-md border border-neutral-200 bg-neutral-100 px-2 py-1 text-sm text-neutral-800 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white"
+            className="flex w-fit items-center gap-2 rounded-md border border-neutral-200 bg-neutral-100 px-3 py-1.5 text-sm text-neutral-800 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white"
           >
-            {skill}
+            <Image
+              src={skill.logo}
+              alt={`${skill.title} logo`}
+              width={18}
+              height={18}
+              className="h-[18px] w-[18px] object-contain"
+            />
+            <span>{skill.title}</span>
           </motion.span>
         ))}
       </div>
