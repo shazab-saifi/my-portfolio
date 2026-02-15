@@ -21,10 +21,10 @@ const SkillsSection = () => {
       title: 'Next.js',
       logo: 'https://cdn.brandfetch.io/id2alue-rx/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B',
     },
-    {
-      title: 'React Native',
-      logo: 'https://cdn.brandfetch.io/idTpJSSBPD/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B',
-    },
+    // {
+    //   title: 'React Native',
+    //   logo: 'https://cdn.brandfetch.io/idTpJSSBPD/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B',
+    // },
     {
       title: 'Tailwindcss',
       logo: 'https://www.svgrepo.com/show/354431/tailwindcss-icon.svg',
@@ -53,16 +53,20 @@ const SkillsSection = () => {
   ];
 
   return (
-    <div className="flex w-full max-w-2xl flex-col gap-6">
-      <motion.h1
+    <div className="flex w-full max-w-2xl flex-col gap-8">
+      <motion.div
         initial={{ y: 10, opacity: 0, filter: 'blur(10px)' }}
         whileInView={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
         transition={{ duration: 0.3, delay: 0.2 }}
         viewport={{ once: true }}
-        className="text-lg font-semibold text-neutral-800 md:text-xl dark:text-white"
       >
-        Skills
-      </motion.h1>
+        <h1 className="font-geist-mono font-semibold text-neutral-800 dark:text-white">
+          Skills
+        </h1>
+        <p className="font-geist-mono mt-2 text-sm font-medium text-neutral-600 dark:text-neutral-400">
+          Technologies and tools I&apos;m good at
+        </p>
+      </motion.div>
       <div className="grid max-w-full grid-cols-2 gap-4 sm:grid-cols-3">
         {skills.map((skill, idx) => (
           <motion.span

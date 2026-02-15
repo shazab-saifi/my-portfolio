@@ -18,16 +18,20 @@ const companies = [
 
 const Experience = () => {
   return (
-    <div className="flex flex-col gap-6">
-      <motion.h1
+    <div className="flex flex-col gap-8">
+      <motion.div
         initial={{ y: 10, opacity: 0, filter: 'blur(10px)' }}
         whileInView={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
-        transition={{ duration: 0.3, delay: 0.4 }}
+        transition={{ duration: 0.3, delay: 0.2 }}
         viewport={{ once: true }}
-        className="text-lg font-semibold text-neutral-800 md:text-xl dark:text-white"
       >
-        Experience
-      </motion.h1>
+        <h1 className="font-geist-mono font-semibold text-neutral-800 dark:text-white">
+          Experience
+        </h1>
+        <p className="font-geist-mono mt-1 text-sm font-medium text-neutral-600 dark:text-neutral-400">
+          Companies and startups I&apos;ve worked at
+        </p>
+      </motion.div>
       <div className="flex flex-col gap-12">
         {companies.map((company, idx) => (
           <motion.div

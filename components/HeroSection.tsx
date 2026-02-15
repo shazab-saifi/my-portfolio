@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 import TypeWriter from 'typewriter-effect';
 
 const HeroSection = () => (
-  <main className="mt-16 max-w-full md:mt-28">
+  <main className="z-10 mt-16 max-w-full md:mt-28">
     <div className="flex w-fit flex-col">
       <motion.div
         initial={{ opacity: 0, filter: 'blue(10px)', y: 10 }}
@@ -14,11 +14,11 @@ const HeroSection = () => (
       >
         <div className="flex w-full flex-col">
           <div className="flex w-full items-center justify-between">
-            <p className="text-lg font-semibold text-neutral-800 md:text-xl dark:text-white">
+            <p className="font-geist-mono text-lg font-semibold text-neutral-800 dark:text-white">
               Shazab Saifi
             </p>
           </div>
-          <div className="text-neutral-800 dark:text-neutral-300">
+          <div className="font-geist-mono mt-1 text-neutral-800 dark:text-neutral-300">
             <TypeWriter
               options={{
                 strings: ['Design engineer', 'Full stack developer'],
@@ -35,7 +35,7 @@ const HeroSection = () => (
         transition={{ duration: 0.3, delay: 0.1 }}
         className="mt-10 max-w-2xl"
       >
-        <div className="space-y-2 font-medium text-neutral-800 dark:text-neutral-300">
+        <div className="space-y-2 leading-7 font-medium text-neutral-800 dark:text-neutral-300">
           <p>
             Hi, I&apos;m Shazab Saifi, a passionate Design engineer. I can
             design user interfaces and turn them into real life products. I love

@@ -77,7 +77,7 @@ const DesignsSection = () => {
                 alt={design.title}
                 width={48}
                 height={48}
-                className="size-12 flex-shrink-0"
+                className="size-12 shrink-0"
               />
               <div className="flex flex-1 flex-col">
                 <Link
@@ -110,7 +110,7 @@ const DesignsSection = () => {
               </div>
             </div>
             {!(designs.length - 1 === idx) && (
-              <div className="mt-4 h-[1px] w-full bg-neutral-300 sm:mt-6 dark:bg-neutral-800"></div>
+              <div className="mt-4 h-px w-full bg-neutral-300 sm:mt-6 dark:bg-neutral-800"></div>
             )}
           </motion.div>
         ))}

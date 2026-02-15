@@ -1,6 +1,10 @@
 'use client';
 
-import { IconExternalLink, IconBrandGithub } from '@tabler/icons-react';
+import {
+  IconArrowUpRight,
+  IconBrandGithub,
+  IconExternalLink,
+} from '@tabler/icons-react';
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import Badge from './Badge';
@@ -8,7 +12,7 @@ import { useTheme } from 'next-themes';
 
 interface Projects {
   name: string;
-  image: string;
+  previewVideo?: string;
   description: string;
   url: string;
   techStack: string[];
@@ -19,8 +23,8 @@ interface Projects {
 const projects: Projects[] = [
   {
     name: 'Quartz UI',
-    image:
-      'https://res.cloudinary.com/dlpjh3fcx/image/upload/v1759296296/quartzui-light_ytrk9a.svg',
+    previewVideo:
+      'https://res.cloudinary.com/dlpjh3fcx/video/upload/v1771162566/quartzui_xzwwdg.mp4',
     description:
       'Quartz UI is a modern animated UI library for Next.js, with easy integration and a CLI for adding components.',
     url: 'https://quartzui.shazab.site',
@@ -35,8 +39,8 @@ const projects: Projects[] = [
   },
   {
     name: 'Pixory',
-    image:
-      'https://res.cloudinary.com/dlpjh3fcx/image/upload/v1768289602/pixoryIcon_pjkima.png',
+    previewVideo:
+      'https://res.cloudinary.com/dlpjh3fcx/video/upload/v1771162714/pixory_ij9myc.mp4',
     description:
       'Pixory is a modern platform to explore, download, and share high-quality photos and videos. Features include search, authentication, and personalized collections.',
     url: 'https://pixory.shazab.site',
@@ -51,32 +55,37 @@ const projects: Projects[] = [
       'neon.tech',
     ],
   },
-  {
-    name: 'Periskope Assignment',
-    image:
-      'https://res.cloudinary.com/dlpjh3fcx/image/upload/v1768289584/periskopeLogo_okapfh.png',
-    description:
-      'A real-time group chat app built for a Periskope internship assignment. Users can create rooms and chat instantly.',
-    url: 'https://periskope.shazab.site',
-    githubLink: 'https://github.com/shazab-saifi/periskopeassignment',
-    techStack: ['React.js', 'Next.js', 'Tailwind.css', 'Supabase realtime db'],
-  },
+  // {
+  //   name: 'Periskope Assignment',
+  //   image:
+  //     'https://res.cloudinary.com/dlpjh3fcx/image/upload/v1768289584/periskopeLogo_okapfh.png',
+  //   description:
+  //     'A real-time group chat app built for a Periskope internship assignment. Users can create rooms and chat instantly.',
+  //   url: 'https://periskope.shazab.site',
+  //   githubLink: 'https://github.com/shazab-saifi/periskopeassignment',
+  //   techStack: ['React.js', 'Next.js', 'Tailwind.css', 'Supabase realtime db'],
+  // },
 ];
 
 const ProjectSection = () => {
   const { theme } = useTheme();
 
   return (
-    <div className="flex flex-col gap-6">
-      <motion.h1
+    <div className="flex flex-col gap-8">
+      <motion.div
         initial={{ y: 10, opacity: 0, filter: 'blur(10px)' }}
         whileInView={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
         transition={{ duration: 0.3, delay: 0.2 }}
         viewport={{ once: true }}
-        className="text-lg font-semibold text-neutral-800 md:text-xl dark:text-white"
       >
-        Projects
-      </motion.h1>
+        <h1 className="font-geist-mono font-semibold text-neutral-800 dark:text-white">
+          Projects
+        </h1>
+        <p className="font-geist-mono mt-1 text-sm font-medium text-neutral-600 dark:text-neutral-400">
+          Some proof of work
+        </p>
+      </motion.div>
+
       <div className="flex flex-col gap-12">
         {projects.map((project, idx) => (
           <motion.div
@@ -88,22 +97,10 @@ const ProjectSection = () => {
             className="space-y-4"
           >
             <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
-              <Image
-                src={project.image}
-                alt={project.name}
-                width={48}
-                height={48}
-                className="size-12 flex-0"
-              />
               <div className="flex flex-1 flex-col">
                 <div className="flex items-center justify-between">
                   {project.url && (
-                    <a
-                      href={project.url}
-                      className="group flex items-center"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <>
                       <h3 className="font-semibold text-neutral-800 dark:text-white">
                         {project.name}
                       </h3>
@@ -122,24 +119,39 @@ const ProjectSection = () => {
                         size={16}
                         className="ml-1 transition-opacity group-hover:opacity-100 md:opacity-0"
                       />
-                    </a>
-                  )}
-                  {project.githubLink && (
-                    <a
-                      href={project.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex w-fit items-center"
-                    >
-                      <IconBrandGithub className="text-neutral-800 sm:size-5 dark:text-white" />
-                    </a>
+                    </>
                   )}
                 </div>
                 <p className="mt-1 max-w-full text-sm text-wrap text-neutral-600 sm:text-base dark:text-neutral-400">
                   {project.description}
                 </p>
+                <div className="mt-4 flex items-center gap-2">
+                  <a
+                    href={project.url}
+                    className="flex w-fit items-center gap-2 rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-sm font-semibold transition-colors hover:bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-900"
+                  >
+                    <IconBrandGithub size={16} />
+                    Code
+                  </a>
+                  <a
+                    href={project.url}
+                    className="flex w-fit items-center gap-1 rounded-lg px-3 py-1.5 text-sm font-semibold text-neutral-600 transition-colors hover:text-black dark:text-neutral-400 dark:hover:text-white"
+                  >
+                    Visit
+                    <IconArrowUpRight size={16} />
+                  </a>
+                </div>
               </div>
             </div>
+            <video
+              src={project.previewVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              className="aspect-video w-full rounded-xl border border-neutral-100 object-cover md:rounded-2xl dark:border-neutral-800"
+            />
           </motion.div>
         ))}
       </div>

@@ -10,7 +10,7 @@ const Landing = () => {
   return (
     <div className="scroll-content relative flex min-h-screen w-full justify-center bg-neutral-50 px-4 sm:px-20 dark:bg-neutral-950">
       <BackgroundGrid />
-      <div className="flex max-w-2xl flex-col gap-12 md:gap-24">
+      <div className="flex max-w-2xl flex-col gap-24">
         <HeroSection />
         <SkillsSection />
         <Experience />
