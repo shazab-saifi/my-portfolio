@@ -127,13 +127,15 @@ const ProjectSection = () => {
                 </p>
                 <div className="mt-4 flex items-center gap-2">
                   <a
-                    href={project.url}
+                    target="_blank"
+                    href={project.githubLink}
                     className="flex w-fit items-center gap-2 rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-sm font-semibold transition-colors hover:bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-900"
                   >
                     <IconBrandGithub size={16} />
                     Code
                   </a>
                   <a
+                    target="_blank"
                     href={project.url}
                     className="flex w-fit items-center gap-1 rounded-lg px-3 py-1.5 text-sm font-semibold text-neutral-600 transition-colors hover:text-black dark:text-neutral-400 dark:hover:text-white"
                   >
