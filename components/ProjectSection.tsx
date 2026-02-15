@@ -6,7 +6,6 @@ import {
   IconExternalLink,
 } from '@tabler/icons-react';
 import { motion } from 'motion/react';
-import Image from 'next/image';
 import Badge from './Badge';
 import { useTheme } from 'next-themes';
 
@@ -115,10 +114,6 @@ const ProjectSection = () => {
                           In Development
                         </Badge>
                       )}
-                      <IconExternalLink
-                        size={16}
-                        className="ml-1 transition-opacity group-hover:opacity-100 md:opacity-0"
-                      />
                     </>
                   )}
                 </div>
