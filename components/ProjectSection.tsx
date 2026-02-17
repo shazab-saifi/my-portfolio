@@ -74,7 +74,7 @@ const ProjectSection = () => {
       <motion.div
         initial={{ y: 10, opacity: 0, filter: 'blur(10px)' }}
         whileInView={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
-        transition={{ duration: 0.3, delay: 0.2 }}
+        transition={{ duration: 0.3, delay: 0.6 }}
         viewport={{ once: true }}
       >
         <h1 className="font-geist-mono font-semibold text-neutral-800 dark:text-white">
@@ -90,7 +90,7 @@ const ProjectSection = () => {
           <motion.div
             initial={{ y: 10, opacity: 0, filter: 'blur(10px)' }}
             whileInView={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
-            transition={{ duration: 0.3, delay: 0.3 }}
+            transition={{ duration: 0.3, delay: 0.7 }}
             viewport={{ once: true }}
             key={idx}
             className="space-y-4"

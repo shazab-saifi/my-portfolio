@@ -50,6 +50,10 @@ const SkillsSection = () => {
       title: 'Postgresql',
       logo: 'https://www.svgrepo.com/show/354200/postgresql.svg',
     },
+    {
+      title: 'Prisma',
+      logo: 'https://cdn.brandfetch.io/idBBE3_R9e/theme/light/idJ9Tiato-.svg?c=1dxbfHSJFAPEGdCLU4o5B',
+    },
   ];
 
   return (
@@ -63,7 +67,7 @@ const SkillsSection = () => {
         <h1 className="font-geist-mono font-semibold text-neutral-800 dark:text-white">
           Skills
         </h1>
-        <p className="font-geist-mono mt-2 text-sm font-medium text-neutral-600 dark:text-neutral-400">
+        <p className="font-geist-mono mt-1 text-sm font-medium text-neutral-600 dark:text-neutral-400">
           Technologies and tools I&apos;m good at
         </p>
       </motion.div>
