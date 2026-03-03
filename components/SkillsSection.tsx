@@ -64,12 +64,9 @@ const SkillsSection = () => {
         transition={{ duration: 0.3, delay: 0.2 }}
         viewport={{ once: true }}
       >
-        <h1 className="font-geist-mono font-semibold text-neutral-800 dark:text-white">
+        <h1 className="text-lg font-semibold text-neutral-800 dark:text-white">
           Skills
         </h1>
-        <p className="font-geist-mono mt-1 text-sm font-medium text-neutral-600 dark:text-neutral-400">
-          Technologies and tools I&apos;m good at
-        </p>
       </motion.div>
       <div className="grid max-w-full grid-cols-2 gap-4 sm:grid-cols-3">
         {skills.map((skill, idx) => (

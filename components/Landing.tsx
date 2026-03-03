@@ -9,8 +9,9 @@ import Socials from './Socials';
 const Landing = () => {
   return (
     <div className="scroll-content relative flex min-h-screen w-full justify-center bg-neutral-50 px-4 sm:px-20 dark:bg-neutral-950">
-      <BackgroundGrid />
-      <div className="flex max-w-2xl flex-col gap-24">
+      {/* <BackgroundGrid /> */}
+      <div className="h-[] bg-linear-to-t from-neutral-950 to-transparent" />
+      <div className="flex max-w-xl flex-col gap-24 md:gap-32">
         <HeroSection />
         <SkillsSection />
         <Experience />

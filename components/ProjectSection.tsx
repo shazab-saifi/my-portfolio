@@ -1,10 +1,6 @@
 'use client';
 
-import {
-  IconArrowUpRight,
-  IconBrandGithub,
-  IconExternalLink,
-} from '@tabler/icons-react';
+import { IconArrowUpRight, IconBrandGithub } from '@tabler/icons-react';
 import { motion } from 'motion/react';
 import Badge from './Badge';
 import { useTheme } from 'next-themes';
@@ -77,12 +73,9 @@ const ProjectSection = () => {
         transition={{ duration: 0.3, delay: 0.6 }}
         viewport={{ once: true }}
       >
-        <h1 className="font-geist-mono font-semibold text-neutral-800 dark:text-white">
+        <h1 className="text-lg font-semibold text-neutral-800 dark:text-white">
           Projects
         </h1>
-        <p className="font-geist-mono mt-1 text-sm font-medium text-neutral-600 dark:text-neutral-400">
-          Some proof of work
-        </p>
       </motion.div>
 
       <div className="flex flex-col gap-12">
@@ -124,7 +117,7 @@ const ProjectSection = () => {
                   <a
                     target="_blank"
                     href={project.githubLink}
-                    className="flex w-fit items-center gap-2 rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-sm font-semibold transition-colors hover:bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-950 dark:hover:bg-neutral-900"
+                    className="flex w-fit items-center gap-2 rounded-lg border border-neutral-200 bg-white px-3 py-1.5 text-sm font-semibold text-neutral-600 transition-colors hover:bg-neutral-100 hover:text-neutral-800 dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-400 dark:hover:bg-neutral-900 dark:hover:text-neutral-100"
                   >
                     <IconBrandGithub size={16} />
                     Code
@@ -132,7 +125,7 @@ const ProjectSection = () => {
                   <a
                     target="_blank"
                     href={project.url}
-                    className="flex w-fit items-center gap-1 rounded-lg px-3 py-1.5 text-sm font-semibold text-neutral-600 transition-colors hover:text-black dark:text-neutral-400 dark:hover:text-white"
+                    className="flex w-fit items-center gap-1 rounded-lg px-3 py-1.5 text-sm font-semibold text-neutral-600 transition-colors hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-100"
                   >
                     Visit
                     <IconArrowUpRight size={16} />
