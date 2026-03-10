@@ -68,7 +68,7 @@ const SkillsSection = () => {
           Skills
         </h1>
       </motion.div>
-      <div className="grid max-w-full grid-cols-2 gap-4 sm:grid-cols-3">
+      <div className="grid max-w-full grid-cols-2 gap-4 sm:grid-cols-3 md:gap-8">
         {skills.map((skill, idx) => (
           <motion.span
             initial={{ y: 10, opacity: 0, filter: 'blur(10px)' }}
@@ -76,15 +76,15 @@ const SkillsSection = () => {
             transition={{ duration: 0.3, delay: 0.3 }}
             viewport={{ once: true }}
             key={idx}
-            className="flex w-fit items-center gap-2 rounded-md border border-neutral-200 bg-neutral-100 px-3 py-1.5 text-sm text-neutral-800 dark:border-neutral-800 dark:bg-neutral-950 dark:text-white"
+            className="w-fit text-sm text-neutral-600 dark:text-neutral-400"
           >
-            <Image
+            {/* <Image
               src={skill.logo}
               alt={`${skill.title} logo`}
               width={18}
               height={18}
               className="h-[18px] w-[18px] object-contain"
-            />
+            /> */}
             <span>{skill.title}</span>
           </motion.span>
         ))}

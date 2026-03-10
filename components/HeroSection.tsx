@@ -12,10 +12,11 @@ const HeroSection = () => (
         animate={{ opacity: 1, filter: 'blue(0px)', y: 0 }}
         transition={{ duration: 0.3 }}
       >
-        <div className="flex w-full flex-col">
-          <div className="flex w-full items-center justify-between">
-            <p className="text-lg font-semibold text-neutral-800 dark:text-white">
-              Shazab Saifi
+        <div className="flex w-full flex-col gap-2">
+          <div className="flex items-center justify-between">
+            <p className="text-3xl font-semibold text-wrap text-neutral-950 md:text-5xl dark:text-neutral-100">
+              Shazab <br />
+              Saifi
             </p>
           </div>
           <div className="mt-1 text-neutral-800 dark:text-neutral-300">
