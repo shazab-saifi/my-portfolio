@@ -3,7 +3,6 @@ import ProjectSection from './ProjectSection';
 import SkillsSection from './SkillsSection';
 import ThemeToggle from './ThemeToggle';
 import Experience from './Experience';
-import Socials from './Socials';
 
 const Landing = () => {
   return (
@@ -20,7 +19,6 @@ const Landing = () => {
         <Experience />
         <ProjectSection />
         {/* <DesignsSection /> */}
-        <Socials />
         <ThemeToggle />
       </div>
     </div>

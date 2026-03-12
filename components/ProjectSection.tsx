@@ -66,7 +66,7 @@ const ProjectSection = () => {
   const { theme } = useTheme();
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="mb-24 flex flex-col gap-8 md:mb-32">
       <motion.div
         initial={{ y: 10, opacity: 0, filter: 'blur(10px)' }}
         whileInView={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
@@ -74,7 +74,7 @@ const ProjectSection = () => {
         viewport={{ once: true }}
       >
         <h1 className="text-lg font-semibold text-neutral-800 dark:text-white">
-          Projects
+          Things I’ve Built
         </h1>
       </motion.div>
 

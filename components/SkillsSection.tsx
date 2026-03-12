@@ -65,7 +65,7 @@ const SkillsSection = () => {
         viewport={{ once: true }}
       >
         <h1 className="text-lg font-semibold text-neutral-800 dark:text-white">
-          Skills
+          What I Work With
         </h1>
       </motion.div>
       <div className="grid max-w-full grid-cols-2 gap-4 sm:grid-cols-3 md:gap-8">
@@ -76,7 +76,7 @@ const SkillsSection = () => {
             transition={{ duration: 0.3, delay: 0.3 }}
             viewport={{ once: true }}
             key={idx}
-            className="w-fit text-sm text-neutral-600 dark:text-neutral-400"
+            className="w-fit text-neutral-600 dark:text-neutral-400"
           >
             {/* <Image
               src={skill.logo}
