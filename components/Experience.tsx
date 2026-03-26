@@ -8,8 +8,8 @@ const companies = [
     image:
       'https://res.cloudinary.com/dlpjh3fcx/image/upload/v1768289276/quarlatis_ag10jp.jpg',
     link: 'https://www.linkedin.com/company/quarlatis/?originalSubdomain=in',
-    role: 'Frontend Developer',
-    duration: 'Aug 2025 — Feb 2026',
+    role: 'Full-Stack Developer Inter',
+    duration: 'Oct 2025 — Feb 2026',
   },
 ];
 
