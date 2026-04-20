@@ -3,6 +3,7 @@ import ProjectSection from './ProjectSection';
 import SkillsSection from './SkillsSection';
 import ThemeToggle from './ThemeToggle';
 import Experience from './Experience';
+import DesignsSection from './DesignsSection';
 
 const Landing = () => {
   return (
@@ -17,6 +18,7 @@ const Landing = () => {
         <HeroSection />
         <SkillsSection />
         <Experience />
+        <DesignsSection />
         <ProjectSection />
         {/* <DesignsSection /> */}
         <ThemeToggle />

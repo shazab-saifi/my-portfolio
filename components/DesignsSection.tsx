@@ -3,118 +3,37 @@
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { IconExternalLink } from '@tabler/icons-react';
+import { IconArrowUpRight, IconExternalLink } from '@tabler/icons-react';
 
 const DesignsSection = () => {
-  const designs = [
-    {
-      title: 'Quartz UI',
-      image:
-        'https://res.cloudinary.com/dlpjh3fcx/image/upload/v1759296296/quartzui-light_ytrk9a.svg',
-      description:
-        'Quartz UI is a modern, animated UI library for Next.js. This is the design of Quartz UI, showcasing its sleek interface, smooth animations, and user-friendly component layouts.',
-      tools: ['Figma'],
-      url: 'https://www.figma.com/design/TsWZVVg7UH1CDOJ38hjRKw/Quartz-UI?node-id=11-27&t=jhrggTPElatYN2E4-1',
-    },
-    {
-      title: 'Nova.ai',
-      image: '/Nova-ai.svg',
-      description:
-        'A modern AI interface inspired by ChatGPT, designed for seamless conversations and intuitive user experience.',
-      tools: ['Figma'],
-      url: 'https://www.figma.com/design/hvNwf7J6iIB7gVu8rAvZN2/Nova.ai?node-id=0-1&t=fmxXdYDzM1K6Ful9-1',
-    },
-    {
-      title: 'Pixory',
-      image: '/pixoryIcon.png',
-      description:
-        'Pixory is a modern platform to explore, download, and share high-quality photos and videos. Features include search, user authentication, and personalized collections.',
-      tools: ['Figma'],
-      url: 'https://www.figma.com/design/ZywBXSjZoAtpir4lxi64Wn/Pixory?node-id=27-556&t=znbjakOyl1fLSziP-1',
-    },
-    {
-      title: 'Petma',
-      image: '/petma.svg',
-      description:
-        'Petma is a social media platform dedicated to pet lovers, where users can share photos, stories, and updates about their pets, connect with other pet owners, and discover a vibrant community centered around animals.',
-      tools: ['Figma'],
-      url: 'https://www.figma.com/design/5NXdGUsZUXCxDE4ICIyUpv/Petma?node-id=36-12&t=1wKabOeGgvW1QtnT-1',
-    },
-    {
-      title: 'WireSketch',
-      image: '/wireSketch.svg',
-      description:
-        'WireSketch is a collaborative online whiteboard tool inspired by Excalidraw, allowing users to quickly sketch diagrams, wireframes, and ideas in real time with an intuitive, hand-drawn style interface.',
-      tools: ['Figma'],
-      url: 'https://www.figma.com/design/ktXDLtIUlDb76tnnZaTATB/WireSketch?node-id=0-1&t=LGbKlmcn0NTgK0ZB-1',
-    },
-  ];
-
   return (
-    <div className="flex flex-col gap-6 md:gap-8">
-      <motion.h1
+    <div>
+      <motion.div
         initial={{ y: 10, opacity: 0, filter: 'blur(10px)' }}
         whileInView={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
-        transition={{ duration: 0.3, delay: 0.1 }}
+        transition={{ duration: 0.3, delay: 0.4 }}
         viewport={{ once: true }}
-        className="text-xl font-semibold text-neutral-800 md:text-2xl dark:text-white"
       >
-        Designs —
-      </motion.h1>
-      <div className="flex flex-col gap-6">
-        {designs.map((design, idx) => (
-          <motion.div
-            initial={{ y: 10, opacity: 0, filter: 'blur(10px)' }}
-            whileInView={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
-            transition={{ duration: 0.3, delay: 0.2 }}
-            viewport={{ once: true }}
-            key={idx}
-            className="flex flex-col justify-between"
-          >
-            <div className="flex flex-col items-start gap-4 sm:flex-row">
-              <Image
-                src={design.image}
-                alt={design.title}
-                width={48}
-                height={48}
-                className="size-12 shrink-0"
-              />
-              <div className="flex flex-1 flex-col">
-                <Link
-                  href={design.url}
-                  className="group flex w-fit items-center gap-2 hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <h3 className="text-lg font-semibold text-neutral-800 dark:text-white">
-                    {design.title}
-                  </h3>
-                  <IconExternalLink
-                    className="transition-opacity group-hover:opacity-100 md:opacity-0"
-                    size={18}
-                  />
-                </Link>
-                <p className="mt-1 max-w-full text-sm text-wrap text-neutral-600 sm:text-base dark:text-neutral-400">
-                  {design.description}
-                </p>
-                <div className="mt-2 flex flex-wrap items-center gap-2">
-                  <h3 className="text-sm font-semibold text-neutral-800 sm:text-base dark:text-white">
-                    Design Tool:
-                  </h3>
-                  <div className="flex gap-2 text-sm text-neutral-600 sm:text-base dark:text-neutral-400">
-                    {design.tools.map((item, idx) => (
-                      <span key={idx}>{item}</span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-            {!(designs.length - 1 === idx) && (
-              <div className="mt-4 h-px w-full bg-neutral-300 sm:mt-6 dark:bg-neutral-800"></div>
-            )}
-          </motion.div>
-        ))}
-      </div>
+        <h1 className="text-lg font-semibold text-neutral-800 dark:text-white">
+          My Designs
+        </h1>
+
+        <Link
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.notion.so/Shazab-s-designs-32325654690f8086815ffbe293e138e6?source=copy_link"
+          className="mt-8 flex w-fit items-center font-semibold hover:underline"
+        >
+          <Image
+            src="https://cdn.brandfetch.io/idZHcZ_i7F/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B"
+            width={12}
+            height={12}
+            alt="fignam-logo"
+          />
+          <p className="ml-2">Figma</p>
+          <IconArrowUpRight className="mt-0.5 ml-0.5 size-4" />
+        </Link>
+      </motion.div>
     </div>
   );
 };
