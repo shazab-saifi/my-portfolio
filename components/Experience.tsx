@@ -9,7 +9,7 @@ const companies = [
       'https://res.cloudinary.com/dlpjh3fcx/image/upload/v1768289276/quarlatis_ag10jp.jpg',
     link: 'https://www.linkedin.com/company/quarlatis/?originalSubdomain=in',
     role: 'Full Stack Intern',
-    duration: 'Oct 2025 — Nov 2026',
+    duration: 'Aug 2025 — Feb 2026',
   },
 ];
 
