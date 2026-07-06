@@ -23,6 +23,11 @@ const nextConfig: NextConfig = {
         hostname: 'cdn.brandfetch.io',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'api-cdn.figma.com',
+        pathname: '/**',
+      },
     ],
   },
 };
