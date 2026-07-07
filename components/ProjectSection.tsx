@@ -2,8 +2,7 @@
 
 import { IconArrowUpRight, IconBrandGithub } from '@tabler/icons-react';
 import { motion } from 'motion/react';
-import Badge from './Badge';
-import { useTheme } from 'next-themes';
+import { Badge } from '@/components/ui/badge';
 
 interface Projects {
   name: string;
@@ -63,8 +62,6 @@ const projects: Projects[] = [
 ];
 
 const ProjectSection = () => {
-  const { theme } = useTheme();
-
   return (
     <div className="mb-24 flex flex-col gap-8 md:mb-32">
       <motion.div
@@ -97,13 +94,7 @@ const ProjectSection = () => {
                         {project.name}
                       </h3>
                       {project.inDevelopment && (
-                        <Badge
-                          variant="default"
-                          textShimmer
-                          className="ml-2"
-                          baseColor={theme === 'dark' ? '#fff' : '#000'}
-                          shimmerColor={theme === 'dark' ? '#000' : '#fff'}
-                        >
+                        <Badge variant="secondary" className="ml-2">
                           In Development
                         </Badge>
                       )}

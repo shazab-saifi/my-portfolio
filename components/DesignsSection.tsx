@@ -4,11 +4,13 @@ import { motion } from 'motion/react';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { IconArrowUpRight } from '@tabler/icons-react';
+import { Badge } from './ui/badge';
 
 const designs = [
   {
     title: 'Cluster',
     url: 'https://www.figma.com/design/MIKKK2XA1I6bf35XGxKmrp/Cluster?node-id=0-1&t=uY7uGEWcshBwFP9o-1',
+    status: 'In Progress',
   },
   {
     title: 'Lunar IDE',
@@ -82,6 +84,7 @@ const DesignsSection = () => {
                 title={preview?.title ?? design.title}
                 href={preview?.url ?? design.url}
                 thumbnailUrl={preview?.thumbnail_url}
+                status={design.status}
               />
             );
           })}
@@ -97,9 +100,10 @@ interface PreviewCardProps {
   title: string;
   thumbnailUrl?: string;
   href: string;
+  status?: string;
 }
 
-function PreviewCard({ title, thumbnailUrl, href }: PreviewCardProps) {
+function PreviewCard({ title, thumbnailUrl, href, status }: PreviewCardProps) {
   return (
     <div className="flex max-w-76 shrink-0 basis-full snap-start flex-col gap-4 sm:basis-76">
       <div className="flex min-w-0 items-center justify-between">
@@ -112,6 +116,7 @@ function PreviewCard({ title, thumbnailUrl, href }: PreviewCardProps) {
             className="size-4"
           />
           <p className="text-foreground truncate font-semibold">{title}</p>
+          {status && <Badge variant="secondary">{status}</Badge>}
         </div>
       </div>
       {thumbnailUrl ? (
