@@ -3,47 +3,40 @@
 import { motion } from 'motion/react';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { Button } from './button';
+import { IconArrowUpRight } from '@tabler/icons-react';
 
-// Only for mapping desc to the Figma API data in UI
 const designs = [
   {
     title: 'Cluster',
-    desc: 'Cluster is a community builder platform like Discord but with elegant UI and delightful UX',
     url: 'https://www.figma.com/design/MIKKK2XA1I6bf35XGxKmrp/Cluster?node-id=0-1&t=uY7uGEWcshBwFP9o-1',
   },
   {
     title: 'Lunar IDE',
-    desc: 'Lunar IDE is a next-generation code editor with a beautiful, intuitive interface for developers.',
     url: 'https://www.figma.com/design/8I5NrlYUTzFJVBX0dtghMA/Lunar-IDE?node-id=48-173&t=uY7uGEWcshBwFP9o-1',
   },
   {
     title: 'Nova.ai',
-    desc: 'Nova.ai is an AI-powered knowledge and productivity tool featuring an elegant and modern design.',
     url: 'https://www.figma.com/design/hvNwf7J6iIB7gVu8rAvZN2/Nova.ai?node-id=62-139&t=w6xgixIMOHmFoMB1-1',
   },
   {
     title: 'Quartz UI',
-    desc: 'Quartz UI is a comprehensive UI library with a focus on usability, clarity, and style.',
     url: 'https://www.figma.com/design/TsWZVVg7UH1CDOJ38hjRKw/Quartz-UI?node-id=93-166&t=onths57GdPutMkqF-1',
   },
   {
     title: 'Petma',
-    desc: 'Petma is a vibrant social platform designed for pet lovers to share, connect, and celebrate their furry friends.',
     url: 'https://www.figma.com/design/5NXdGUsZUXCxDE4ICIyUpv/Petma?node-id=36-12&t=6FmxaAsmDM2cqsj8-1',
   },
   {
     title: 'WireSketch',
-    desc: 'WireSketch is an intuitive online whiteboard app inspired by Excalidraw, made for collaborative sketching and brainstorming.',
     url: 'https://www.figma.com/design/ktXDLtIUlDb76tnnZaTATB/WireSketch?node-id=0-1&t=HLYG92pwBFXeTfXf-1',
   },
 ];
 
-// Type matches only used API response fields
 type FigmaPreviewData = {
-  title: string;
-  url: string;
-  thumbnail_url: string;
+  title?: string;
+  url?: string;
+  thumbnail_url?: string;
+  error?: string;
 };
 
 const DesignsSection = () => {
@@ -56,8 +49,8 @@ const DesignsSection = () => {
     async function fetchFigmaFileMetadata() {
       try {
         const response = await fetch(`/api/figma-preview?${params}`);
-        const preview: FigmaPreviewData[] = await response.json();
-        setFileData(preview);
+        const preview = await response.json();
+        setFileData(Array.isArray(preview) ? preview : []);
       } catch (error) {
         console.error(error);
       }
@@ -67,8 +60,9 @@ const DesignsSection = () => {
   }, []);
 
   return (
-    <div>
+    <div className="w-full min-w-0">
       <motion.div
+        className="w-full min-w-0 overflow-hidden"
         initial={{ y: 10, opacity: 0, filter: 'blur(10px)' }}
         whileInView={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
         transition={{ duration: 0.3, delay: 0.4 }}
@@ -78,15 +72,19 @@ const DesignsSection = () => {
           My Designs
         </h1>
 
-        <div className="flex max-w-full items-center gap-8 overflow-x-auto">
-          {fileData.map((data, idx) => (
-            <PreviewCard
-              key={idx}
-              title={data.title}
-              href={data.url}
-              thumbnailUrl={data.thumbnail_url}
-            />
-          ))}
+        <div className="designs-scrollbar flex w-full max-w-full min-w-0 snap-x snap-mandatory items-start gap-5 overflow-x-auto overscroll-x-contain sm:gap-8">
+          {designs.map((design, idx) => {
+            const preview = fileData[idx];
+
+            return (
+              <PreviewCard
+                key={design.url}
+                title={preview?.title ?? design.title}
+                href={preview?.url ?? design.url}
+                thumbnailUrl={preview?.thumbnail_url}
+              />
+            );
+          })}
         </div>
       </motion.div>
     </div>
@@ -97,40 +95,59 @@ export default DesignsSection;
 
 interface PreviewCardProps {
   title: string;
-  thumbnailUrl: string;
+  thumbnailUrl?: string;
   href: string;
 }
 
 function PreviewCard({ title, thumbnailUrl, href }: PreviewCardProps) {
   return (
-    <div className="flex min-w-76 flex-col gap-4">
-      <div className="flex items-center justify-between">
-        <p className="text-foreground font-semibold">{title}</p>
-        <Button>
-          <a
-            href={href}
-            target="_blank"
-            rel="external noopener noreferrer"
-            className="flex items-center gap-1"
-          >
-            <Image
-              src="https://cdn.brandfetch.io/idZHcZ_i7F/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B"
-              alt="figma-logo"
-              width={20}
-              height={20}
-              className="size-4"
-            />
-            <span>Open</span>
-          </a>
-        </Button>
+    <div className="flex max-w-76 shrink-0 basis-full snap-start flex-col gap-4 sm:basis-76">
+      <div className="flex min-w-0 items-center justify-between">
+        <div className="flex min-w-0 items-center gap-1">
+          <Image
+            src="https://cdn.brandfetch.io/idZHcZ_i7F/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B"
+            alt="figma-logo"
+            width={20}
+            height={20}
+            className="size-4"
+          />
+          <p className="text-foreground truncate font-semibold">{title}</p>
+        </div>
       </div>
-      <Image
-        src={thumbnailUrl}
-        width={300}
-        height={200}
-        className="aspect-video rounded-lg border border-neutral-200 object-contain dark:border-neutral-800"
-        alt={`thumbnail-${title}`}
-      />
+      {thumbnailUrl ? (
+        <Image
+          src={thumbnailUrl}
+          width={300}
+          height={200}
+          className="aspect-video w-full rounded-lg border border-neutral-200 object-contain dark:border-neutral-800"
+          alt={'thumbnail-' + title}
+        />
+      ) : (
+        <div className="flex aspect-video w-full items-center justify-center rounded-lg border border-neutral-200 bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-900">
+          <Image
+            src="https://cdn.brandfetch.io/idZHcZ_i7F/theme/dark/symbol.svg?c=1dxbfHSJFAPEGdCLU4o5B"
+            alt="figma-logo"
+            width={24}
+            height={24}
+            className="size-6 opacity-70"
+          />
+        </div>
+      )}
+      <a
+        href={href}
+        target="_blank"
+        rel="external noopener noreferrer"
+        className="group flex w-fit items-center gap-1 overflow-hidden"
+      >
+        <IconArrowUpRight
+          className="-translate-x-full translate-y-full transition-transform duration-100 ease-out group-hover:translate-x-0 group-hover:translate-y-0"
+          size={24}
+        />
+
+        <span className="-translate-x-[24px] font-semibold transition-transform duration-150 ease-out group-hover:translate-x-0 group-hover:underline">
+          Open In figma
+        </span>
+      </a>
     </div>
   );
 }

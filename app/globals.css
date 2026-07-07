@@ -33,15 +33,15 @@ body {
 /* --- 1. Standard Properties (Firefox & Modern Engines) --- */
 html {
   scrollbar-width: thin; /* Makes scrollbar narrow */
-  scrollbar-color: rgba(0, 0, 0, 0.3) transparent; /* thumb color | track color */
+  scrollbar-color: rgb(33, 33, 33) transparent; /* thumb color | track color */
 }
 
 /* --- 2. WebKit Engines (Chrome, Safari, Edge, Opera) --- */
 
 /* The overall scrollbar container */
 html::-webkit-scrollbar {
-  width: 8px; /* Width of vertical scrollbar */
-  height: 8px; /* Height of horizontal scrollbar */
+  width: 4px; /* Width of vertical scrollbar */
+  height: 4px; /* Height of horizontal scrollbar */
 }
 
 /* The background track */
@@ -51,15 +51,19 @@ html::-webkit-webkit-scrollbar-track {
 
 /* The draggable thumb handle */
 html::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.25); /* Subtle, elegant transparency */
+  background-color: rgb(33, 33, 33);
   border-radius: 10px; /* Perfectly rounded capsule shape */
   border: 2px solid transparent; /* Creates padding around the thumb */
   background-clip: padding-box; /* Forces background to stop at border */
 }
 
-/* Hover state to make it interactive yet subtle */
-html::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0, 0, 0, 0.45);
+.designs-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.designs-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 @theme inline {
