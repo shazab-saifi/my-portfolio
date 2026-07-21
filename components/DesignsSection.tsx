@@ -148,8 +148,7 @@ function PreviewCard({ title, thumbnailUrl, href, status }: PreviewCardProps) {
           className="-translate-x-full translate-y-full transition-transform duration-100 ease-out group-hover:translate-x-0 group-hover:translate-y-0"
           size={24}
         />
-
-        <span className="-translate-x-[24px] font-semibold transition-transform duration-150 ease-out group-hover:translate-x-0 group-hover:underline">
+        <span className="-translate-x-6 font-semibold underline transition-transform duration-150 ease-out group-hover:translate-x-0 group-hover:underline md:no-underline">
           Open In figma
         </span>
       </a>
